@@ -10,7 +10,9 @@
             "request": "launch",
             "target": "./bin/main",
             "cwd": "${workspaceRoot}",
-            "valuesFormatting": "parseText"
+            "valuesFormatting": "prettyPrinters",
+            "autorun": ["python exec(open(\"tools/nim-gdb.py\").read())"],
+            "preLaunchTask": "Build Nim Project"
         }
     ]
 }

@@ -356,7 +356,7 @@ class NimSeqPrinter:
       length = int(self.val['Sup']['len'])
       #align = len(str(length - 1))
       for i in range(length):
-        yield ("data[{0}]".format(i), self.val["data"][i])
+        yield ("{0}".format(i), self.val["data"][i])
 
 ################################################################################
 

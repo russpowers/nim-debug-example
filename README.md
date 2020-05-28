@@ -23,29 +23,10 @@ This repository contains some files to help setup debugging in VSCode.
 
 ![setting a breakpoint in main.nim on line 15](images/vscode-set-breakpoint.png)
 
-5. Build the code (ctrl-shift-b), which should use the build definition in `.vscode/tasks.json`.
-My preference is to set "Build on Save" in the VSCode-Nim configuration:
-
-![setting build on save in vscode-nim](images/vscode-nim-config.png)
-
-5. Debug -> Start Debugging, which should use the launch config in `.vscode/launch.json`.
-6. Once the breakpoint is hit, let's enable pretty-printing. Otherwise, when you mouse over a
-symbol in the debugger, you'll see memory addresses instead of values.
-
-Open the Debug Console (at the bottom) and type:
-
-```
-python exec(open("bin/nim-gdb.py").read())
-```
-
-(Note: The version of GDB I have installed was built to run with Python 3, and this script works with Python 3)
-
-After pressing [enter], you should see success:
-
-![load nim-gdb.py success](images/debug-console-load-nim-gdb.png)
+5. Debug -> Start Debugging, which should use the launch config in `.vscode/launch.json`. (This will automatically build the code)
 
 Note: The `nim-gdb.py` script was copied from [here](https://github.com/nim-lang/Nim/blob/master/tools/nim-gdb.py),
-and exists in the `bin/` directory simply to reduce the number of steps in setting this up. It might be a good
+and exists in the `tools/` directory simply to reduce the number of steps in setting this up. It might be a good
 idea to update your local copy of this file with the official latest file from the repository.
 
 If running the Python pretty-printing script succeeds, you should be able to mouse over a variable,

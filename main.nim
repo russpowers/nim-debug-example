@@ -1,5 +1,3 @@
-
-# this code is copied from the Nim homepage: https://nim-lang.org/
 type
   Person = object
     name: string
